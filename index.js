@@ -55,7 +55,7 @@ MaxlengthPlugin.install = (Vue, options) => {
                 let subLength = notChineseNum + Math.floor((limit - notChineseNum) / 2)
                 let newVal = val.substring(0, subLength)
 
-                // 如果用户在两个非中文之间输入中文，subLength会比预计的多1个(如‘11’ -> ‘1我我1’,最后会变成 -> ‘1我我’)
+                // 如果用户在两个非中文之间输入中文，subLength会比预计的多1个(如限制4个字节，‘11’ -> ‘1我我1’,最后会变成 -> ‘1我我’)
                 // 所以需要再校准一遍
                 if (length(newVal) > limit) {
                     newVal = newVal.substring(0, subLength -1)
