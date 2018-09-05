@@ -13,7 +13,7 @@
  * <el-input v-model="test" v-maxlength="{limit:10, field:'test', type:'int'}"></el-input>
  *
  * 指令参数：
- * @param {Number} limit 限制的字节数
+ * @param {Number} limit 限制的字节数 
  * @param {String} field 需要改变的组件data中的字段（具体访问路径）
  * @param {String} type 目前只支持'int'，只允许输入整数数字
  */
