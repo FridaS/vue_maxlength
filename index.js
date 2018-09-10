@@ -85,12 +85,12 @@ let limitHandler = (inputTarget, field, limit, type, vnode, intLimitVal) => {
         }, 0)
     } else {
         inputTarget.maxLength = limit - chineseNum
-        if (type === 'int') {
-          return
-        }
-        setTimeout(() => {
-          inputTarget.value = val
-        }, 0)
+        // if (type === 'int') {
+        //   return
+        // }
+        // setTimeout(() => {
+        //   inputTarget.value = val
+        // }, 0)
     }
 }
 
