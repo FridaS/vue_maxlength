@@ -61,13 +61,13 @@ let limitHandler = (inputTarget, field, limit, type, vnode, intLimitVal) => {
         // 截断的长度 = 一个一个输入的非中文字符串长度 + 允许输入的中文字符串长度
         let subLength = notChineseNum + Math.floor((limit - notChineseNum) / 2)
         let newVal = val.substring(0, subLength)
-        inputTarget.maxLength = subLength
+        // inputTarget.maxLength = subLength
 
         // 如果用户在两个非中文之间输入中文，subLength会比预计的多1个(如‘11’ -> ‘1我我1’,最后会变成 -> ‘1我我’)
         // 所以需要再校准一遍
         if (length(newVal) > limit) {
             newVal = newVal.substring(0, subLength -1)
-            inputTarget.maxLength = subLength -1
+            // inputTarget.maxLength = subLength -1
         }
 
         // 修改目标字段
