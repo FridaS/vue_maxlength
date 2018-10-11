@@ -1,6 +1,6 @@
 {
   "name": "vue_input_maxlength",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Limit the input length of the input box",
   "main": "index.js",
   "scripts": {
