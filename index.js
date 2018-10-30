@@ -155,8 +155,6 @@ let length = (str) => {
 
             if (type === 'int') {
                 inputTarget.addEventListener('input', inputTarget.handler)
-            } else {
-              inputTarget.addEventListener('input', inputTarget.blurHandler)
             }
             inputTarget.addEventListener('blur', inputTarget.blurHandler)
         },
