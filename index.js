@@ -159,25 +159,27 @@ let length = (str) => {
             inputTarget.addEventListener('blur', inputTarget.blurHandler)
         },
         update (el, binding, vnode) {
+          setTimeout(() => {
             let inputTarget = getInputTarget(el)
 
             let arg = binding.arg
             let { field, limit, type } = arg ? { field: arg, limit: binding.value, type: binding.value } : binding.value
             let val = inputTarget.value
 
-          // 限制只能输入整数数字
-          if (type === 'int') {
-            let newVal = val.replace(/[^\d]/g, '')
-            val = newVal
-          }
-          limitHandler(inputTarget, field, limit, type, vnode, val)
-          if (type === 'int') {
+            // 限制只能输入整数数字
+            if (type === 'int') {
+              let newVal = val.replace(/[^\d]/g, '')
+              val = newVal
+            }
+            limitHandler(inputTarget, field, limit, type, vnode, val)
+            if (type === 'int') {
               // 兼容el-input失焦后被限制的字符又显示在input dom value上的问题
               // dom失焦会触发指令update钩子
               setTimeout(() => {
-                  inputTarget.value = val
+                inputTarget.value = val
               }, 0)
-          }
+            }
+          })
         },
         unbind (el) {
           let inputTarget = getInputTarget(el)
